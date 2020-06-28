@@ -7,8 +7,10 @@
 # call及数据保护模块介绍
 ## 使用介绍
 １.选择要保护的PE文件，选择后，在左边栏可以看到该该PE文件中含有的函数及全局数据地址。可以根据需要往右边栏添加要保护的数据和函数。
+
 ![image](https://github.com/chenpan01/Anti_GameAssist/tree/master/images/2.png)
 ２.点击保护时，该工具会在PE文件中修改调用函数的地址和使用数据的地址，修改后意味着如果直接执行该PE文件将不能正常运行，需要点击运行才能正常运行。这样就可以起到反调式的作用和混淆静态分析的作用。
+
 ![image](https://github.com/chenpan01/Anti_GameAssist/tree/master/images/3.png)
 ## 功能实现介绍
 １.选中PE文件时，触发OnEnChangeMfceditbrowse事件，使用fopen函数读取PE文件，ftell函数读取PE文件大小，利用malloc在内存中分配同等大小内存，把文件信息赋值到内存中。
